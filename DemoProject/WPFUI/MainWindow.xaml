@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000" FontFamily="Gill Sans Ultra Bold">
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\Reggie\Desktop\microwave.png"></ImageBrush>
+        <ImageBrush ImageSource="/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"/>
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -34,43 +34,43 @@
             <!-- </ScrollViewer.Background> -->
             <StackPanel>
                 <Button BorderThickness="0" Background="Transparent" Name="Button1" Click="Button_AnswerClick">
-                    <Image  Margin="0" Source="C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\bacon.png"/>
+                    <Image  Margin="0" Source="/WPFUI;component/Images/Ingredienten/bacon.png"/>
                 </Button>
 
                 <Button BorderThickness="0" Background="Transparent" Name="Button2" Click="Button_AnswerClick">
-                    <Image Margin="0" Source="C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\vlees.png"/>
+                    <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/vlees.png"/>
                 </Button>
 
                 <Button BorderThickness="0" Background="Transparent" Name="Button3" Click="Button_AnswerClick">
-                    <Image Margin="0" Source="C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\kip.png"/>
+                    <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/kip.png"/>
                 </Button>
 
                 <Button BorderThickness="0" Background="Transparent" Name="Button4" Click="Button_AnswerClick">
-                    <Image Margin="0" Source="C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\macaroni.png"/>
+                    <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/macaroni.png"/>
                 </Button>
 
                 <Button BorderThickness="0" Background="Transparent" Name="Button5" Click="Button_AnswerClick">
-                    <Image Margin="0" Source="C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\spaghetti.png"/>
+                    <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/spaghetti.png"/>
                 </Button>
 
                 <Button BorderThickness="0" Background="Transparent" Name="Button6" Click="Button_AnswerClick">
-                    <Image Margin="0" Source="C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\brocoli.png"/>
+                    <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/brocoli.png"/>
                 </Button>
 
                 <Button BorderThickness="0" Background="Transparent" Name="Button7" Click="Button_AnswerClick">
-                    <Image Margin="0" Source="C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\ui.png"/>
+                    <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/ui.png"/>
                 </Button>
 
                 <Button BorderThickness="0" Background="Transparent" Name="Button8" Click="Button_AnswerClick">
-                    <Image Margin="0" Source="C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\knoflook.png"/>
+                    <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/knoflook.png"/>
                 </Button>
 
                 <Button BorderThickness="0" Background="Transparent" Name="Button9" Click="Button_AnswerClick">
-                    <Image Margin="0" Source="C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\tomaten.png"/>
+                    <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/tomaten.png"/>
                 </Button>
 
                 <Button BorderThickness="0" Background="Transparent" Name="Button10" Click="Button_AnswerClick">
-                    <Image Margin="0" Source="C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\paprika.png"/>
+                    <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/paprika.png"/>
                 </Button>
 
             </StackPanel>

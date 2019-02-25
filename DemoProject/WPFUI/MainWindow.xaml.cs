@@ -81,11 +81,11 @@ namespace WPFUI
             switch (microwave)
             {
                 case true:
-                    //MicroWaveImage.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\ingrediënten\microwave_closed.png"));
+                    //MicroWaveImage.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/microwave_closed.png"));
                     microwave = false;
                     break;
                 case false:
-                    //MicroWaveImage.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\ingrediënten\microwave_opened.png"));
+                    //MicroWaveImage.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/microwave_opened.png"));
                     microwave = true;
                     break;
             }
@@ -103,30 +103,30 @@ namespace WPFUI
                     if (recipearray[0]==null)
                     {
                         recipearray[0] = "Bacon";
-                        recipe1.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\bacon.png"));
+                        recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/bacon.png"));
                     }
                     else if(recipearray[1] == null)
                     {
                         recipearray[1] = "Bacon";
-                        recipe2.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\bacon.png"));
+                        recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/bacon.png"));
 
                     }
                     else if (recipearray[2] == null)
                     {
                         recipearray[2] = "Bacon";
-                        recipe3.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\bacon.png"));
+                        recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/bacon.png"));
 
                     }
                     else if (recipearray[3] == null)
                     {
                         recipearray[3] = "Bacon";
-                        recipe4.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\bacon.png"));
+                        recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/bacon.png"));
 
                     }
                     else if (recipearray[4] == null)
                     {
                         recipearray[4] = "Bacon";
-                        recipe5.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\bacon.png"));
+                        recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/bacon.png"));
 
                     }
                     break;
@@ -136,28 +136,28 @@ namespace WPFUI
                     if (recipearray[0] == null)
                     {
                         recipearray[0] = "Vlees";
-                        recipe1.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\vlees.png"));
+                        recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vlees.png"));
                     }
                     else if (recipearray[1] == null)
                     {
                         recipearray[1] = "Vlees";
-                        recipe2.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\vlees.png"));
+                        recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vlees.png"));
 
                     }
                     else if (recipearray[2] == null)
                     {
                         recipearray[2] = "Vlees";
-                        recipe3.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\vlees.png"));
+                        recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vlees.png"));
                     }
                     else if (recipearray[3] == null)
                     {
                         recipearray[3] = "Vlees";
-                        recipe4.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\vlees.png"));
+                        recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vlees.png"));
                     }
                     else if (recipearray[4] == null)
                     {
                         recipearray[4] = "Vlees";
-                        recipe5.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\vlees.png"));
+                        recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vlees.png"));
 
                     }
                     break;
@@ -167,28 +167,28 @@ namespace WPFUI
                     if (recipearray[0] == null)
                     {
                         recipearray[0] = "Kip";
-                        recipe1.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\kip.png"));
+                        recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/kip.png"));
                     }
                     else if (recipearray[1] == null)
                     {
                         recipearray[1] = "Kip";
-                        recipe2.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\kip.png"));
+                        recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/kip.png"));
 
                     }
                     else if (recipearray[2] == null)
                     {
                         recipearray[2] = "Kip";
-                        recipe3.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\kip.png"));
+                        recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/kip.png"));
                     }
                     else if (recipearray[3] == null)
                     {
                         recipearray[3] = "Kip";
-                        recipe4.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\kip.png"));
+                        recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/kip.png"));
                     }
                     else if (recipearray[4] == null)
                     {
                         recipearray[4] = "Kip";
-                        recipe5.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\kip.png"));
+                        recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/kip.png"));
 
                     }
                     break;
@@ -198,28 +198,28 @@ namespace WPFUI
                     if (recipearray[0] == null)
                     {
                         recipearray[0] = "Macaroni";
-                        recipe1.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\macaroni.png"));
+                        recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/macaroni.png"));
                     }
                     else if (recipearray[1] == null)
                     {
                         recipearray[1] = "Macaroni";
-                        recipe2.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\macaroni.png"));
+                        recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/macaroni.png"));
 
                     }
                     else if (recipearray[2] == null)
                     {
                         recipearray[2] = "Macaroni";
-                        recipe3.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\macaroni.png"));
+                        recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/macaroni.png"));
                     }
                     else if (recipearray[3] == null)
                     {
                         recipearray[3] = "Macaroni";
-                        recipe4.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\macaroni.png"));
+                        recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/macaroni.png"));
                     }
                     else if (recipearray[4] == null)
                     {
                         recipearray[4] = "Macaroni";
-                        recipe5.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\macaroni.png"));
+                        recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/macaroni.png"));
 
                     }
                     break;
@@ -229,28 +229,28 @@ namespace WPFUI
                     if (recipearray[0] == null)
                     {
                         recipearray[0] = "Spaghetti";
-                        recipe1.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\spaghetti.png"));
+                        recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/spaghetti.png"));
                     }
                     else if (recipearray[1] == null)
                     {
                         recipearray[1] = "Spaghetti";
-                        recipe2.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\spaghetti.png"));
+                        recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/spaghetti.png"));
 
                     }
                     else if (recipearray[2] == null)
                     {
                         recipearray[2] = "Spaghetti";
-                        recipe3.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\spaghetti.png"));
+                        recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/spaghetti.png"));
                     }
                     else if (recipearray[3] == null)
                     {
                         recipearray[3] = "Spaghetti";
-                        recipe4.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\spaghetti.png"));
+                        recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/spaghetti.png"));
                     }
                     else if (recipearray[4] == null)
                     {
                         recipearray[4] = "Spaghetti";
-                        recipe5.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\spaghetti.png"));
+                        recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/spaghetti.png"));
 
                     }
                     break;
@@ -260,28 +260,28 @@ namespace WPFUI
                     if (recipearray[0] == null)
                     {
                         recipearray[0] = "Broccoli";
-                        recipe1.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\brocoli.png"));
+                        recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/brocoli.png"));
                     }
                     else if (recipearray[1] == null)
                     {
                         recipearray[1] = "Broccoli";
-                        recipe2.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\brocoli.png"));
+                        recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/brocoli.png"));
 
                     }
                     else if (recipearray[2] == null)
                     {
                         recipearray[2] = "Broccoli";
-                        recipe3.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\brocoli.png"));
+                        recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/brocoli.png"));
                     }
                     else if (recipearray[3] == null)
                     {
                         recipearray[3] = "Broccoli";
-                        recipe4.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\brocoli.png"));
+                        recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/brocoli.png"));
                     }
                     else if (recipearray[4] == null)
                     {
                         recipearray[4] = "Broccoli";
-                        recipe5.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\brocoli.png"));
+                        recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/brocoli.png"));
 
                     }
                     break;
@@ -291,28 +291,28 @@ namespace WPFUI
                     if (recipearray[0] == null)
                     {
                         recipearray[0] = "Ui";
-                        recipe1.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\ui.png"));
+                        recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/ui.png"));
                     }
                     else if (recipearray[1] == null)
                     {
                         recipearray[1] = "Ui";
-                        recipe2.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\ui.png"));
+                        recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/ui.png"));
 
                     }
                     else if (recipearray[2] == null)
                     {
                         recipearray[2] = "Ui";
-                        recipe3.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\ui.png"));
+                        recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/ui.png"));
                     }
                     else if (recipearray[3] == null)
                     {
                         recipearray[3] = "Ui";
-                        recipe4.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\ui.png"));
+                        recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/ui.png"));
                     }
                     else if (recipearray[4] == null)
                     {
                         recipearray[4] = "Ui";
-                        recipe5.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\ui.png"));
+                        recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/ui.png"));
 
                     }
                     break;
@@ -322,28 +322,28 @@ namespace WPFUI
                     if (recipearray[0] == null)
                     {
                         recipearray[0] = "Knoflook";
-                        recipe1.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\knoflook.png"));
+                        recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/knoflook.png"));
                     }
                     else if (recipearray[1] == null)
                     {
                         recipearray[1] = "Knoflook";
-                        recipe2.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\knoflook.png"));
+                        recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/knoflook.png"));
 
                     }
                     else if (recipearray[2] == null)
                     {
                         recipearray[2] = "Knoflook";
-                        recipe3.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\knoflook.png"));
+                        recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/knoflook.png"));
                     }
                     else if (recipearray[3] == null)
                     {
                         recipearray[3] = "Knoflook";
-                        recipe4.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\knoflook.png"));
+                        recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/knoflook.png"));
                     }
                     else if (recipearray[4] == null)
                     {
                         recipearray[4] = "Knoflook";
-                        recipe5.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\knoflook.png"));
+                        recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/knoflook.png"));
 
                     }
                     break;
@@ -353,28 +353,28 @@ namespace WPFUI
                     if (recipearray[0] == null)
                     {
                         recipearray[0] = "Tomaat";
-                        recipe1.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\tomaten.png"));
+                        recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/tomaten.png"));
                     }
                     else if (recipearray[1] == null)
                     {
                         recipearray[1] = "Tomaat";
-                        recipe2.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\tomaten.png"));
+                        recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/tomaten.png"));
 
                     }
                     else if (recipearray[2] == null)
                     {
                         recipearray[2] = "Tomaat";
-                        recipe3.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\tomaten.png"));
+                        recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/tomaten.png"));
                     }
                     else if (recipearray[3] == null)
                     {
                         recipearray[3] = "Tomaat";
-                        recipe4.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\tomaten.png"));
+                        recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/tomaten.png"));
                     }
                     else if (recipearray[4] == null)
                     {
                         recipearray[4] = "Tomaat";
-                        recipe5.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\tomaten.png"));
+                        recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/tomaten.png"));
                     }
                     break;
 
@@ -383,28 +383,28 @@ namespace WPFUI
                     if (recipearray[0] == null)
                     {
                         recipearray[0] = "Paprika";
-                        recipe1.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\paprika.png"));
+                        recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/paprika.png"));
                     }
                     else if (recipearray[1] == null)
                     {
                         recipearray[1] = "Paprika";
-                        recipe2.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\paprika.png"));
+                        recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/paprika.png"));
 
                     }
                     else if (recipearray[2] == null)
                     {
                         recipearray[2] = "Paprika";
-                        recipe3.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\paprika.png"));
+                        recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/paprika.png"));
                     }
                     else if (recipearray[3] == null)
                     {
                         recipearray[3] = "Paprika";
-                        recipe4.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\paprika.png"));
+                        recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/paprika.png"));
                     }
                     else if (recipearray[4] == null)
                     {
                         recipearray[4] = "Paprika";
-                        recipe5.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\Ingrediënten\paprika.png"));
+                        recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/paprika.png"));
                     }
                     break;
             }            
