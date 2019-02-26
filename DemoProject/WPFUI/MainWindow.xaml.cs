@@ -48,7 +48,7 @@ namespace WPFUI
             LampOn = true;
             if (LampOn)
             {
-                BackgroundImage.UriSource = new Uri(@"/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg", UriKind.Relative);
+                this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-open-uit.jpg"));
             }
         }
     }

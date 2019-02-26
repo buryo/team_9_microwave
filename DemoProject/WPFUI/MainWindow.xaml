@@ -12,17 +12,9 @@
 
         <!--Grid background-->
         <Grid.Background>
-            <ImageBrush>
-                <ImageBrush.ImageSource>
-                    <BitmapImage x:Name="BackgroundImage" UriSource="/WPFUI;component/Images/Microwave/micro-dicht-aan.jpg"></BitmapImage>
-                </ImageBrush.ImageSource>
-            </ImageBrush>
-            
-   
+            <ImageBrush x:Name="BackgroundImage" ImageSource="/WPFUI;component/Images/Microwave/micro-dicht-aan.jpg"/>
         </Grid.Background>
         
-
-
         <!-- Grid for numbers -->
         <Grid Name="Numbers" Height="88" VerticalAlignment="Bottom" Margin="0,0,345,215" HorizontalAlignment="Right" Width="85">
             <Grid.ColumnDefinitions>
