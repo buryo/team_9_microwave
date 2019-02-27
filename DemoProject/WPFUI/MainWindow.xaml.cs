@@ -40,8 +40,6 @@ namespace WPFUI
         public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             var comboBox = sender as ComboBox;
-            string value = comboBox.SelectedItem as string;
-            recipetext.Text = value;
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
@@ -59,7 +57,14 @@ namespace WPFUI
             if (recipearray.Contains("Tomaat") && recipearray.Contains("Vlees") && recipearray.Contains("Spaghetti") && recipearray.Contains("Ui") && recipearray.Contains("Knoflook"))
             {
                 Combo1.Items.Add("Pasta Bolognese");
+                MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/pasta-bolo.png", UriKind.RelativeOrAbsolute));
             }
+        }
+
+        private void MicrowaveRecipeButton_Click(object sender, RoutedEventArgs e)
+        {
+            MicrowaveRecipe.Source = null;
+            deleteRecipe(sender, e); 
         }
 
         private void deleteRecipe(object sender, RoutedEventArgs e)
@@ -94,7 +99,6 @@ namespace WPFUI
         private void Button_AnswerClick(object sender, RoutedEventArgs e)
         {
             string content = (sender as Button).Name.ToString();
-            recipetext.Text = content;
 
             switch (content)
             {
