@@ -48,6 +48,12 @@ namespace WPFUI
                     break;
                 case "Rijst":
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/rijst-gerecht.png", UriKind.RelativeOrAbsolute));
+                    break;
+                case "Macaroni":
+                    MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/macaroni-gerecht.png", UriKind.RelativeOrAbsolute));
+                    break;
+                case "Wok schotel":
+                    MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/wok-gerecht.png", UriKind.RelativeOrAbsolute));
                     break;              
             }
         }
@@ -174,6 +180,24 @@ namespace WPFUI
                 {
                     
                     Combo1.Items.Add("Rijst");
+                }
+            }
+
+            if (recipearray.Contains("Macaroni") && recipearray.Contains("Paprika") && recipearray.Contains("Tomaat") && recipearray.Contains("Ui") && recipearray.Contains("Knoflook"))
+
+            {
+                if (!Combo1.Items.Contains("Macaroni"))
+                {
+                    Combo1.Items.Add("Macaroni");
+                }
+            }
+
+            if (recipearray.Contains("Vlees") && recipearray.Contains("Broccoli") && recipearray.Contains("Vis") && recipearray.Contains("Ui") && recipearray.Contains("Knoflook"))
+
+            {
+                if (!Combo1.Items.Contains("Wok schotel"))
+                {
+                    Combo1.Items.Add("Wok schotel");
                 }
             }
 
