@@ -140,9 +140,20 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Ingredienten\rijst.png" />
+    <Resource Include="Images\Ingredienten\vis.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Recepten\pasta-bolo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Recepten\kip.png" />
+    <Resource Include="Images\Recepten\macaroni-gerecht.png" />
+    <Resource Include="Images\Recepten\rijst-gerecht.png" />
+    <Resource Include="Images\Recepten\steak.png" />
+    <Resource Include="Images\Recepten\wok-gerecht.png" />
+    <Resource Include="Images\Recepten\zee-gerecht.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

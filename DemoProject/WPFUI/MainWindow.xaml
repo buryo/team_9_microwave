@@ -88,6 +88,14 @@
 
                     <Button BorderThickness="0" Background="Transparent" Name="Button10" Click="Button_AnswerClick">
                         <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/paprika.png"/>
+                    </Button> 
+                    
+                    <Button BorderThickness="0" Background="Transparent" Name="Button11" Click="Button_AnswerClick">
+                        <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/rijst.png"/>
+                    </Button>
+                    
+                    <Button BorderThickness="0" Background="Transparent" Name="Button12" Click="Button_AnswerClick">
+                        <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/vis.png"/>
                     </Button>
 
                 </StackPanel>
