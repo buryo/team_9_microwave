@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -92,6 +93,11 @@ namespace WPFUI
             //Timer for the microwave minutes and seconds
             MicrowaveTimer.Instance.CountDown();
             TBCountdown.Content = string.Format("{0}:{1}", MicrowaveTimer.Instance.Minute.ToString().PadLeft(2, '0'), MicrowaveTimer.Instance.Second.ToString().PadLeft(2, '0'));
+            if (MicrowaveTimer.Instance.Second == 0 && MicrowaveTimer.Instance.Minute == 0)
+            {
+                DoorHandle_Click(sender, new RoutedEventArgs());
+                recipeLabel.Content = "Enjoy your meal!";
+            }
         }
 
         //Method to start the microwave

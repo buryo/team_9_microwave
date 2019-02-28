@@ -155,5 +155,10 @@
     <Resource Include="Images\Recepten\wok-gerecht.png" />
     <Resource Include="Images\Recepten\zee-gerecht.png" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\microwave-happymusic.wav" />
+    <Content Include="Sounds\microwave-happymusic.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

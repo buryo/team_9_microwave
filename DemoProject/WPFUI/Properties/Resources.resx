@@ -133,6 +133,9 @@
   <data name="macaroni" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Ingredienten\macaroni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="microwave_happymusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\microwave-happymusic.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="micro_dicht_aan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Microwave\micro-dicht-aan.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
