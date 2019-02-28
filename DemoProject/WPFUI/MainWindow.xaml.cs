@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+
 
 namespace WPFUI
 {
@@ -21,7 +23,7 @@ namespace WPFUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public bool LampOn { get; set; }
+        private bool MicrowaveStatus;       
         public bool DoorOpen { get; set; }
         private bool microwave = true;
         private System.Windows.Threading.DispatcherTimer dispatcherTimer;
@@ -31,32 +33,51 @@ namespace WPFUI
 
         public MainWindow()
         {
+
             InitializeComponent();
             //Timer
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
-            dispatcherTimer.Start();
+            
+
+
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-
+            MicrowaveTimer.Instance.CountDown();
+            TBCountdown.Content = string.Format("{0}:{1}", MicrowaveTimer.Instance.Minute.ToString().PadLeft(2, '0'), MicrowaveTimer.Instance.Second.ToString().PadLeft(2, '0'));
         }
 
         private void StartButton_Click_1(object sender, RoutedEventArgs e)
         {
-            LampOn = true;
-            if ((LampOn) && DoorOpen == false)
+            
+            if (MicrowaveStatus || (MicrowaveTimer.Instance.Minute == 0 && MicrowaveTimer.Instance.Second == 0))
             {
+                MicrowaveTimer.Instance.AddSeconds(30);
+            }
+
+            if (!DoorOpen)
+            {
+                MicrowaveStatus = true;
+                dispatcherTimer.Start();
                 this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-aan.jpg"));
             }
         }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
-            LampOn = false;
-            if ((LampOn == false) && (DoorOpen == false))
+            if (!MicrowaveStatus)
+            {
+                MicrowaveTimer.Instance.CounterReset();
+                TBCountdown.Content = "00:00";
+            }
+
+            MicrowaveStatus = false;
+            dispatcherTimer.Stop();
+            
+            if (DoorOpen == false)
             {
                 this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"));
             }
@@ -65,23 +86,26 @@ namespace WPFUI
         private void DoorHandle_Click(object sender, RoutedEventArgs e)
         {
             DoorOpen = true;
-            LampOn = true;
-            if (DoorOpen && LampOn)
+        
+            if (DoorOpen)
             {
+                dispatcherTimer.Stop();
+                MicrowaveStatus = false;
                 this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-open-aan.jpg"));
             }
         }
 
         private void CloseDoorButton_Click(object sender, RoutedEventArgs e)
         {
-            DoorOpen = true;
-            LampOn = false;
-            if (DoorOpen && (LampOn == false))
+            try
             {
+                DoorOpen = false;
                 this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"));
             }
-
-            DoorOpen = false;
+            catch (Exception exception)
+            {
+                throw new Exception("Door closing failed");
+            }
         }
     }
 }

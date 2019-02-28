@@ -9,7 +9,6 @@
         Title="MainWindow" Height="600" Width="1000" FontFamily="Gill Sans Ultra Bold">
 
     <Grid>
-
         <!--Grid background-->
         <Grid.Background>
             <ImageBrush x:Name="BackgroundImage" ImageSource="/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"/>
@@ -45,7 +44,10 @@
         </Grid>
 
         <!--Grid for timer-->
-        <Grid Name="Timer" Margin="574,242,358,309"/>
+        <Grid Name="Timer" Margin="574,242,358,309">
+            <Label Name="TBCountdown" Content="00:00" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="57" Foreground="Red" Margin="0,-13,0,-6" FontSize="18" FontFamily="Segoe UI"/>
+        </Grid>
+
 
         <!--Grid for ingredients-->
         <Grid Name="Ingredients" HorizontalAlignment="Right" Width="237" Margin="0,10,32,161"/>
