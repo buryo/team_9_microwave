@@ -12,7 +12,7 @@ namespace WPFUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool MicrowaveStatus;       
+        private bool MicrowaveStatus = true;       
         public bool DoorOpen { get; set; }
         public bool microwave { get; set; }
         private System.Windows.Threading.DispatcherTimer dispatcherTimer;
@@ -36,24 +36,52 @@ namespace WPFUI
             switch (Combo1.SelectedItem.ToString())
             {
                 case "Pasta Bolognese":
+                    if (DoorOpen)
+                    {
+                        MicrowaveRecipe.Visibility = Visibility.Hidden;
+                    }
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/pasta-bolo.png", UriKind.RelativeOrAbsolute));
                     break;
                 case "Chicken dish":
+                    if (DoorOpen)
+                    {
+                        MicrowaveRecipe.Visibility = Visibility.Hidden;
+                    }
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/kip.png", UriKind.RelativeOrAbsolute));
                     break;
                 case "Fish dish":
+                    if (DoorOpen)
+                    {
+                        MicrowaveRecipe.Visibility = Visibility.Hidden;
+                    }
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/zee-gerecht.png", UriKind.RelativeOrAbsolute));
                     break;
                 case "Steak":
+                    if (DoorOpen)
+                    {
+                        MicrowaveRecipe.Visibility = Visibility.Hidden;
+                    }
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/steak.png", UriKind.RelativeOrAbsolute));
                     break;
                 case "Rice":
+                    if (DoorOpen)
+                    {
+                        MicrowaveRecipe.Visibility = Visibility.Hidden;
+                    }
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/rijst-gerecht.png", UriKind.RelativeOrAbsolute));
                     break;
                 case "Macaroni":
+                    if (DoorOpen)
+                    {
+                        MicrowaveRecipe.Visibility = Visibility.Hidden;
+                    }
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/macaroni-gerecht.png", UriKind.RelativeOrAbsolute));
                     break;
                 case "Wok dish":
+                    if (DoorOpen)
+                    {
+                        MicrowaveRecipe.Visibility = Visibility.Hidden;
+                    }
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/wok-gerecht.png", UriKind.RelativeOrAbsolute));
                     break;              
             }
@@ -69,6 +97,7 @@ namespace WPFUI
         //Method to start the microwave
         private void StartButton_Click_1(object sender, RoutedEventArgs e)
         {
+            recipeLabel.Content = "" + MicrowaveStatus;
             //If the microwave door is closed or if the timer is on 0, add 30 seconds
             if (MicrowaveStatus || (MicrowaveTimer.Instance.Minute == 0 && MicrowaveTimer.Instance.Second == 0))
             {
