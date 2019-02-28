@@ -32,6 +32,13 @@ namespace WPFUI
         public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             var comboBox = sender as ComboBox;
+            switch (Combo1.SelectedItem.ToString())
+            {
+                
+                case "Pasta Bolognese":
+                    MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/pasta-bolo.png", UriKind.RelativeOrAbsolute));
+                    break;
+            }
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
@@ -50,8 +57,9 @@ namespace WPFUI
 
             if (!DoorOpen)
             {
-                Combo1.Items.Add("Pasta Bolognese");
-                MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/pasta-bolo.png", UriKind.RelativeOrAbsolute));
+                MicrowaveStatus = true;
+                dispatcherTimer.Start();
+                this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-aan.jpg"));
             }
         }
 
@@ -62,10 +70,18 @@ namespace WPFUI
         }
 
         private void deleteRecipe(object sender, RoutedEventArgs e)
-        { 
-            MicrowaveStatus = true;
-            dispatcherTimer.Start();
-            this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-aan.jpg"));
+        {
+            recipe1.Source = null;
+            recipe2.Source = null;
+            recipe3.Source = null;
+            recipe4.Source = null;
+            recipe5.Source = null;
+
+            recipearray[0] = null;
+            recipearray[1] = null;
+            recipearray[2] = null;
+            recipearray[3] = null;
+            recipearray[4] = null;
         }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
@@ -111,20 +127,6 @@ namespace WPFUI
             }
         }
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            switch (microwave)
-            {
-                case true:
-                    //MicroWaveImage.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\ingrediënten\microwave_closed.png"));
-                    microwave = false;
-                    break;
-                case false:
-                    //MicroWaveImage.Source = new BitmapImage(new Uri(@"C:\Users\Reggie\Desktop\school\Programmeren\C#\Les 2\ingrediënten\microwave_opened.png"));
-                    microwave = true;
-                    break;
-            }
-        }
 
         private void Button_AnswerClick(object sender, RoutedEventArgs e)
         {
