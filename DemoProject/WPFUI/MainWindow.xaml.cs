@@ -22,6 +22,7 @@ namespace WPFUI
     public partial class MainWindow : Window
     {
         public bool LampOn { get; set; }
+        public bool DoorOpen { get; set; }
         private bool microwave = true;
         private System.Windows.Threading.DispatcherTimer dispatcherTimer;
         private List<String> _recipe = new List<String>();
@@ -46,10 +47,41 @@ namespace WPFUI
         private void StartButton_Click_1(object sender, RoutedEventArgs e)
         {
             LampOn = true;
-            if (LampOn)
+            if ((LampOn) && DoorOpen == false)
             {
-                this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-open-uit.jpg"));
+                this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-aan.jpg"));
             }
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+            LampOn = false;
+            if ((LampOn == false) && (DoorOpen == false))
+            {
+                this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"));
+            }
+        }
+
+        private void DoorHandle_Click(object sender, RoutedEventArgs e)
+        {
+            DoorOpen = true;
+            LampOn = true;
+            if (DoorOpen && LampOn)
+            {
+                this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-open-aan.jpg"));
+            }
+        }
+
+        private void CloseDoorButton_Click(object sender, RoutedEventArgs e)
+        {
+            DoorOpen = true;
+            LampOn = false;
+            if (DoorOpen && (LampOn == false))
+            {
+                this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"));
+            }
+
+            DoorOpen = false;
         }
     }
 }
