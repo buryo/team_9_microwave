@@ -16,9 +16,7 @@ namespace WPFUI
         public bool DoorOpen { get; set; }
         public bool microwave { get; set; }
         private System.Windows.Threading.DispatcherTimer dispatcherTimer;
-       // private List<String> _recipe = new List<String>();
         public String[] recipearray = new String[5];
-        //public List<String> recipes = new List<String>();
 
         public MainWindow()
         {
@@ -78,7 +76,7 @@ namespace WPFUI
             }
 
             //Start the microwave if the door is closed
-            if (!DoorOpen)
+            if (DoorOpen)
             {
                 MicrowaveStatus = true;
                 dispatcherTimer.Start();
@@ -120,7 +118,7 @@ namespace WPFUI
             MicrowaveStatus = false;
             dispatcherTimer.Stop();
             
-            if (DoorOpen == false)
+            if (DoorOpen == true)
             {
                 this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"));
             }
@@ -129,20 +127,22 @@ namespace WPFUI
         //A method with a switch statement to handle the microwave
         private void DoorHandle_Click(object sender, RoutedEventArgs e)
         {
-            recipeLabel.Content = "" + DoorOpen;
             switch (DoorOpen)
             {
                 case true:
+                    MicrowaveRecipe.Visibility = Visibility.Visible;
                     DoorOpen = false;
                     dispatcherTimer.Stop();
                     MicrowaveStatus = false;
                     this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-open-aan.jpg"));
                     break;
                 case false:
+                    MicrowaveRecipe.Visibility = Visibility.Hidden;
                     DoorOpen = true;
                     this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"));
                     break;
                 default:
+                    MicrowaveRecipe.Visibility = Visibility.Visible;
                     DoorOpen = true;
                     dispatcherTimer.Stop();
                     MicrowaveStatus = false;
