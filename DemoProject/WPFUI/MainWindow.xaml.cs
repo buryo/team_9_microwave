@@ -13,8 +13,8 @@ namespace WPFUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool MicrowaveStatus;       
-        public bool DoorOpen { get; set; }
+        private bool MicrowaveStatus;
+        public bool DoorOpen { get; set; } = false;
         public bool microwave { get; set; }
         private System.Windows.Threading.DispatcherTimer dispatcherTimer;
        // private List<String> _recipe = new List<String>();
@@ -34,31 +34,6 @@ namespace WPFUI
         public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             var comboBox = sender as ComboBox;
-            //Switch statement to put the recipe in the microwave
-            switch (Combo1.SelectedItem.ToString())
-            {
-                case "Pasta Bolognese":
-                    MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/pasta-bolo.png", UriKind.RelativeOrAbsolute));
-                    break;
-                case "Chicken dish":
-                    MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/kip.png", UriKind.RelativeOrAbsolute));
-                    break;
-                case "Fish dish":
-                    MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/zee-gerecht.png", UriKind.RelativeOrAbsolute));
-                    break;
-                case "Steak":
-                    MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/steak.png", UriKind.RelativeOrAbsolute));
-                    break;
-                case "Rice":
-                    MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/rijst-gerecht.png", UriKind.RelativeOrAbsolute));
-                    break;
-                case "Macaroni":
-                    MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/macaroni-gerecht.png", UriKind.RelativeOrAbsolute));
-                    break;
-                case "Wok dish":
-                    MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/wok-gerecht.png", UriKind.RelativeOrAbsolute));
-                    break;              
-            }
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
