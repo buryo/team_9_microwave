@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUI"
+        ResizeMode="NoResize "
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000" FontFamily="Gill Sans Ultra Bold">
 
@@ -207,7 +208,7 @@
                 <RowDefinition Height="212"/>
                 <RowDefinition Height="110"/>
             </Grid.RowDefinitions>
-            <Button Grid.ColumnSpan="3" Name="CloseDoorButton" Content="CloseDoorButton" HorizontalAlignment="Left" Margin="127,86,0,0" Grid.Row="1" VerticalAlignment="Top" Width="210" RenderTransformOrigin="0.5,0.5" Height="40" Opacity="0" Click="CloseDoorButton_Click">
+            <Button Grid.ColumnSpan="3" Name="CloseDoorButton" Content="CloseDoorButton" HorizontalAlignment="Left" Margin="127,86,0,0" Grid.Row="1" VerticalAlignment="Top" Width="210" RenderTransformOrigin="0.5,0.5" Height="40" Opacity="0" Click="DoorHandle_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
