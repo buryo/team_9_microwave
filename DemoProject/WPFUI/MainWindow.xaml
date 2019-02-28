@@ -88,12 +88,12 @@
 
                     <Button BorderThickness="0" Background="Transparent" Name="Button10" Click="Button_AnswerClick">
                         <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/paprika.png"/>
-                    </Button> 
-                    
+                    </Button>
+
                     <Button BorderThickness="0" Background="Transparent" Name="Button11" Click="Button_AnswerClick">
                         <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/rijst.png"/>
                     </Button>
-                    
+
                     <Button BorderThickness="0" Background="Transparent" Name="Button12" Click="Button_AnswerClick">
                         <Image Margin="0" Source="/WPFUI;component/Images/Ingredienten/vis.png"/>
                     </Button>
@@ -217,8 +217,10 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
+            <Label x:Name="recipeLabel" Grid.Column="1" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top" FontSize="24" Grid.ColumnSpan="2" Foreground="AliceBlue"
+                   />
         </Grid>
-        
+
     </Grid>
 </Window>
                 

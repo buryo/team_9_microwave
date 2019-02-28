@@ -16,9 +16,9 @@ namespace WPFUI
         public bool DoorOpen { get; set; }
         public bool microwave { get; set; }
         private System.Windows.Threading.DispatcherTimer dispatcherTimer;
-        private List<String> _recipe = new List<String>();
+       // private List<String> _recipe = new List<String>();
         public String[] recipearray = new String[5];
-        public List<String> recipes = new List<String>();
+        //public List<String> recipes = new List<String>();
 
         public MainWindow()
         {
@@ -29,30 +29,32 @@ namespace WPFUI
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
         }
 
+        //Method to pick the recipe when the selection changes
         public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             var comboBox = sender as ComboBox;
+            //Switch statement to put the recipe in the microwave
             switch (Combo1.SelectedItem.ToString())
             {
                 case "Pasta Bolognese":
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/pasta-bolo.png", UriKind.RelativeOrAbsolute));
                     break;
-                case "Rijst schotel":
+                case "Chicken dish":
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/kip.png", UriKind.RelativeOrAbsolute));
                     break;
-                case "Vis schotel":
+                case "Fish dish":
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/zee-gerecht.png", UriKind.RelativeOrAbsolute));
                     break;
                 case "Steak":
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/steak.png", UriKind.RelativeOrAbsolute));
                     break;
-                case "Rijst":
+                case "Rice":
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/rijst-gerecht.png", UriKind.RelativeOrAbsolute));
                     break;
                 case "Macaroni":
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/macaroni-gerecht.png", UriKind.RelativeOrAbsolute));
                     break;
-                case "Wok schotel":
+                case "Wok dish":
                     MicrowaveRecipe.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Recepten/wok-gerecht.png", UriKind.RelativeOrAbsolute));
                     break;              
             }
@@ -60,18 +62,21 @@ namespace WPFUI
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
+            //Timer for the microwave minutes and seconds
             MicrowaveTimer.Instance.CountDown();
             TBCountdown.Content = string.Format("{0}:{1}", MicrowaveTimer.Instance.Minute.ToString().PadLeft(2, '0'), MicrowaveTimer.Instance.Second.ToString().PadLeft(2, '0'));
         }
 
+        //Method to start the microwave
         private void StartButton_Click_1(object sender, RoutedEventArgs e)
         {
-            
+            //If the microwave door is closed or if the timer is on 0, add 30 seconds
             if (MicrowaveStatus || (MicrowaveTimer.Instance.Minute == 0 && MicrowaveTimer.Instance.Second == 0))
             {
                 MicrowaveTimer.Instance.AddSeconds(30);
             }
 
+            //Start the microwave if the door is closed
             if (!DoorOpen)
             {
                 MicrowaveStatus = true;
@@ -80,12 +85,13 @@ namespace WPFUI
             }
         }
 
+        //Remove the recipe out of the microwave
         private void MicrowaveRecipeButton_Click(object sender, RoutedEventArgs e)
         {
             MicrowaveRecipe.Source = null;
-            deleteRecipe(sender, e); 
         }
 
+        //Remove the ingredients from the list
         private void deleteRecipe(object sender, RoutedEventArgs e)
         {
             recipe1.Source = null;
@@ -101,6 +107,7 @@ namespace WPFUI
             recipearray[4] = null;
         }
 
+        //Method for stopping the microwave
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
             if (!MicrowaveStatus)
@@ -130,74 +137,86 @@ namespace WPFUI
             }
         }
 
+        
         private void CloseDoorButton_Click(object sender, RoutedEventArgs e)
         {
                 DoorOpen = false;
                 this.BackgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"));
         }
 
+        //
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            if (recipearray.Contains("Tomaat") && recipearray.Contains("Vlees") && recipearray.Contains("Spaghetti") && recipearray.Contains("Ui") && recipearray.Contains("Knoflook"))
+            if (recipearray.Contains("Tomato") && recipearray.Contains("Meat") && recipearray.Contains("Spaghetti") && recipearray.Contains("Onion") && recipearray.Contains("Garlic"))
             {
                 if (!Combo1.Items.Contains("Pasta Bolognese"))
                 {
                     Combo1.Items.Add("Pasta Bolognese");
-                    
+                    recipeLabel.Content = "You made some Pasta bolognese!";
                 }
                 
             }
 
-            if (recipearray.Contains("Tomaat") && recipearray.Contains("Rijst") && recipearray.Contains("Kip") && recipearray.Contains("Knoflook"))
+            if (recipearray.Contains("Tomato") && recipearray.Contains("Rice") && recipearray.Contains("Chicken") && recipearray.Contains("Garlic"))
             {
-                if (!Combo1.Items.Contains("Rijst schotel"))
+                if (!Combo1.Items.Contains("Chicken dish"))
                 {
-                    Combo1.Items.Add("Rijst schotel");
-                   
+                    Combo1.Items.Add("Chicken dish");
+                    recipeLabel.Content = "You made a Chicken dish!";
                 }
-
+            
             }
 
-            if (recipearray.Contains("Vis") && recipearray.Contains("Tomaat") && recipearray.Contains("Knoflook") && recipearray.Contains("Ui") && recipearray.Contains("Broccoli"))
+            if (recipearray.Contains("Fish") && recipearray.Contains("Tomato") && recipearray.Contains("Garlic") && recipearray.Contains("Onion") && recipearray.Contains("Broccoli"))
             {
-                if (!Combo1.Items.Contains("Vis schotel"))
+                if (!Combo1.Items.Contains("Fish dish"))
                 {
-                    Combo1.Items.Add("Vis schotel");
+                    Combo1.Items.Add("Fish dish");
+                    recipeLabel.Content = "You made a Fish Dish!";
                 }
             }
 
-            if (recipearray.Contains("Vlees") && recipearray.Contains("Bacon") && recipearray.Contains("Broccoli") && recipearray.Contains("Ui") && recipearray.Contains("Knoflook"))
+            if (recipearray.Contains("Meat") && recipearray.Contains("Bacon") && recipearray.Contains("Broccoli") && recipearray.Contains("Onion") && recipearray.Contains("Garlic"))
             {
                 if (!Combo1.Items.Contains("Steak"))
                 {
                     Combo1.Items.Add("Steak");
+                    recipeLabel.Content = "You made a Steak dish!";
+
                 }
             }
 
-            if (recipearray[0].Contains("Rijst"))
+             
+            
+            if (recipearray[0] != null && recipearray[0].Contains("Rice"))
             {
-                if (!Combo1.Items.Contains("Rijst") && recipearray[1] == null)
+                if (!Combo1.Items.Contains("Rice") && recipearray[1] == null)
                 {
                     
-                    Combo1.Items.Add("Rijst");
+                    Combo1.Items.Add("Rice");
+                    recipeLabel.Content = "You made some Rice!";
+
                 }
             }
 
-            if (recipearray.Contains("Macaroni") && recipearray.Contains("Paprika") && recipearray.Contains("Tomaat") && recipearray.Contains("Ui") && recipearray.Contains("Knoflook"))
+            if (recipearray.Contains("Macaroni") && recipearray.Contains("Paprika") && recipearray.Contains("Tomato") && recipearray.Contains("Onion") && recipearray.Contains("Garlic"))
 
             {
                 if (!Combo1.Items.Contains("Macaroni"))
                 {
                     Combo1.Items.Add("Macaroni");
+                    recipeLabel.Content = "You made some Macaroni!";
+
                 }
             }
 
-            if (recipearray.Contains("Vlees") && recipearray.Contains("Broccoli") && recipearray.Contains("Vis") && recipearray.Contains("Ui") && recipearray.Contains("Knoflook"))
+            if (recipearray.Contains("Meat") && recipearray.Contains("Broccoli") && recipearray.Contains("Fish") && recipearray.Contains("Onion") && recipearray.Contains("Garlic"))
 
             {
-                if (!Combo1.Items.Contains("Wok schotel"))
+                if (!Combo1.Items.Contains("Wok dish"))
                 {
-                    Combo1.Items.Add("Wok schotel");
+                    Combo1.Items.Add("Wok dish");
+                    recipeLabel.Content = "You made a Wok dish!";
                 }
             }
 
@@ -248,28 +267,28 @@ namespace WPFUI
 
                     if (recipearray[0] == null)
                     {
-                        recipearray[0] = "Vlees";
+                        recipearray[0] = "Meat";
                         recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vlees.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[1] == null)
                     {
-                        recipearray[1] = "Vlees";
+                        recipearray[1] = "Meat";
                         recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vlees.png", UriKind.RelativeOrAbsolute));
 
                     }
                     else if (recipearray[2] == null)
                     {
-                        recipearray[2] = "Vlees";
+                        recipearray[2] = "Meat";
                         recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vlees.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[3] == null)
                     {
-                        recipearray[3] = "Vlees";
+                        recipearray[3] = "Meat";
                         recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vlees.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[4] == null)
                     {
-                        recipearray[4] = "Vlees";
+                        recipearray[4] = "Meat";
                         recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vlees.png", UriKind.RelativeOrAbsolute));
 
                     }
@@ -279,28 +298,28 @@ namespace WPFUI
 
                     if (recipearray[0] == null)
                     {
-                        recipearray[0] = "Kip";
+                        recipearray[0] = "Chicken";
                         recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/kip.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[1] == null)
                     {
-                        recipearray[1] = "Kip";
+                        recipearray[1] = "Chicken";
                         recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/kip.png", UriKind.RelativeOrAbsolute));
 
                     }
                     else if (recipearray[2] == null)
                     {
-                        recipearray[2] = "Kip";
+                        recipearray[2] = "Chicken";
                         recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/kip.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[3] == null)
                     {
-                        recipearray[3] = "Kip";
+                        recipearray[3] = "Chicken";
                         recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/kip.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[4] == null)
                     {
-                        recipearray[4] = "Kip";
+                        recipearray[4] = "Chicken";
                         recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/kip.png", UriKind.RelativeOrAbsolute));
 
                     }
@@ -403,28 +422,28 @@ namespace WPFUI
 
                     if (recipearray[0] == null)
                     {
-                        recipearray[0] = "Ui";
+                        recipearray[0] = "Onion";
                         recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/ui.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[1] == null)
                     {
-                        recipearray[1] = "Ui";
+                        recipearray[1] = "Onion";
                         recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/ui.png", UriKind.RelativeOrAbsolute));
 
                     }
                     else if (recipearray[2] == null)
                     {
-                        recipearray[2] = "Ui";
+                        recipearray[2] = "Onion";
                         recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/ui.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[3] == null)
                     {
-                        recipearray[3] = "Ui";
+                        recipearray[3] = "Onion";
                         recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/ui.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[4] == null)
                     {
-                        recipearray[4] = "Ui";
+                        recipearray[4] = "Onion";
                         recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/ui.png", UriKind.RelativeOrAbsolute));
 
                     }
@@ -434,28 +453,28 @@ namespace WPFUI
 
                     if (recipearray[0] == null)
                     {
-                        recipearray[0] = "Knoflook";
+                        recipearray[0] = "Garlic";
                         recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/knoflook.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[1] == null)
                     {
-                        recipearray[1] = "Knoflook";
+                        recipearray[1] = "Garlic";
                         recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/knoflook.png", UriKind.RelativeOrAbsolute));
 
                     }
                     else if (recipearray[2] == null)
                     {
-                        recipearray[2] = "Knoflook";
+                        recipearray[2] = "Garlic";
                         recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/knoflook.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[3] == null)
                     {
-                        recipearray[3] = "Knoflook";
+                        recipearray[3] = "Garlic";
                         recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/knoflook.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[4] == null)
                     {
-                        recipearray[4] = "Knoflook";
+                        recipearray[4] = "Garlic";
                         recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/knoflook.png", UriKind.RelativeOrAbsolute));
 
                     }
@@ -465,28 +484,28 @@ namespace WPFUI
 
                     if (recipearray[0] == null)
                     {
-                        recipearray[0] = "Tomaat";
+                        recipearray[0] = "Tomato";
                         recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/tomaten.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[1] == null)
                     {
-                        recipearray[1] = "Tomaat";
+                        recipearray[1] = "Tomato";
                         recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/tomaten.png", UriKind.RelativeOrAbsolute));
 
                     }
                     else if (recipearray[2] == null)
                     {
-                        recipearray[2] = "Tomaat";
+                        recipearray[2] = "Tomato";
                         recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/tomaten.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[3] == null)
                     {
-                        recipearray[3] = "Tomaat";
+                        recipearray[3] = "Tomato";
                         recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/tomaten.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[4] == null)
                     {
-                        recipearray[4] = "Tomaat";
+                        recipearray[4] = "Tomato";
                         recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/tomaten.png", UriKind.RelativeOrAbsolute));
                     }
                     break;
@@ -525,28 +544,28 @@ namespace WPFUI
 
                     if (recipearray[0] == null)
                     {
-                        recipearray[0] = "Rijst";
+                        recipearray[0] = "Rice";
                         recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/rijst.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[1] == null)
                     {
-                        recipearray[1] = "Rijst";
+                        recipearray[1] = "Rice";
                         recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/rijst.png", UriKind.RelativeOrAbsolute));
 
                     }
                     else if (recipearray[2] == null)
                     {
-                        recipearray[2] = "Rijst";
+                        recipearray[2] = "Rice";
                         recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/rijst.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[3] == null)
                     {
-                        recipearray[3] = "Rijst";
+                        recipearray[3] = "Rice";
                         recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/rijst.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[4] == null)
                     {
-                        recipearray[4] = "Rijst";
+                        recipearray[4] = "Rice";
                         recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/rijst.png", UriKind.RelativeOrAbsolute));
                     }
                     break;
@@ -555,28 +574,28 @@ namespace WPFUI
 
                     if (recipearray[0] == null)
                     {
-                        recipearray[0] = "Vis";
+                        recipearray[0] = "Fish";
                         recipe1.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vis.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[1] == null)
                     {
-                        recipearray[1] = "Vis";
+                        recipearray[1] = "Fish";
                         recipe2.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vis.png", UriKind.RelativeOrAbsolute));
 
                     }
                     else if (recipearray[2] == null)
                     {
-                        recipearray[2] = "Vis";
+                        recipearray[2] = "Fish";
                         recipe3.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vis.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[3] == null)
                     {
-                        recipearray[3] = "Vis";
+                        recipearray[3] = "Fish";
                         recipe4.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vis.png", UriKind.RelativeOrAbsolute));
                     }
                     else if (recipearray[4] == null)
                     {
-                        recipearray[4] = "Vis";
+                        recipearray[4] = "Fish";
                         recipe5.Source = new BitmapImage(new Uri(@"/WPFUI;component/Images/Ingredienten/vis.png", UriKind.RelativeOrAbsolute));
                     }
                     break;
