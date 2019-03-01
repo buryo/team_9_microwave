@@ -39,8 +39,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="30*"/>
             </Grid.ColumnDefinitions>
-            <Button Name="StartButton" Content="Start" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="19" Opacity="0" Click="StartButton_Click_1" Margin="0,0,0,-2"/>
-            <Button Name="StopButton" Content="Stop" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="19" Opacity="0" Click="StopButton_Click" Margin="-1,0,0,-2"/>
+            <Button x:Name="StartButton" Content="Start" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="19" Opacity="0" Click="StartButton_Click_1" Margin="0,0,0,-2"/>
+            <Button x:Name="StopButton" Content="Stop" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="19" Opacity="0" Click="StopButton_Click" Margin="-1,0,0,-2"/>
         </Grid>
 
         <!--Grid for ingredients-->
@@ -156,7 +156,6 @@
             <StackPanel Grid.Column="2" Grid.Row="1">
 
                 <Button Content="Close" Grid.Column="4" Grid.Row="1"  Click="CloseButton_Click" />
-                <Button Content="+1" Grid.Column="3" Grid.Row="1"  Click="SubmitButton_Click" />
                 <Button Content="Start" Grid.Column="2" Grid.Row="1"  Click="StartButton_Click" />
 
                 <Button Content="delete recipe" Click="deleteRecipe"  Grid.Column="5" Grid.Row="1" FontSize="12" />
