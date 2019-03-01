@@ -9,10 +9,9 @@
         Title="MainWindow" Height="600" Width="1000" FontFamily="Gill Sans Ultra Bold">
 
     <Grid>
-
         <!--Grid background-->
         <Grid.Background>
-            <ImageBrush ImageSource="/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"/>
+            <ImageBrush x:Name="BackgroundImage" ImageSource="/WPFUI;component/Images/Microwave/micro-dicht-uit.jpg"/>
         </Grid.Background>
 
         <!-- Grid for numbers -->
@@ -36,15 +35,12 @@
         <!--Grid for start and stop-->
         <Grid Name="StartStop" Margin="574,359,356,193">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="31*"/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="30*"/>
             </Grid.ColumnDefinitions>
-        </Grid>
-
-        <!--Grid for timer-->
-        <Grid Name="Timer" Margin="574,242,358,309">
-            <TextBlock x:Name="timer" Grid.Column="5" Grid.Row="1" FontSize="12" Foreground="White" Text="0:00" />
-
+            <Button Name="StartButton" Content="Start" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="19" Opacity="0" Click="StartButton_Click_1" Margin="0,0,0,-2"/>
+            <Button Name="StopButton" Content="Stop" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="19" Opacity="0" Click="StopButton_Click" Margin="-1,0,0,-2"/>
         </Grid>
 
         <!--Grid for ingredients-->
@@ -97,6 +93,12 @@
                 </StackPanel>
             </ScrollViewer>
         </Grid>
+
+        <!--Grid for timer-->
+        <Grid Name="Timer" Margin="574,242,358,309">
+            <Label Name="TBCountdown" Content="00:00" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" Width="57" Foreground="Red" Margin="0,-13,0,-6" FontSize="18" FontFamily="Segoe UI"/>
+        </Grid>
+
 
         <!--Grid for sticky note-->
         <Grid Name="StickyNote" Grid.RowSpan="3" Grid.ColumnSpan="3">
@@ -164,8 +166,55 @@
             </StackPanel>
         </Grid>
 
+        <Grid Name="OpenDoor" Grid.RowSpan="3" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="221*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="236"/>
+                <RowDefinition Height="157"/>
+                <RowDefinition Height="176"/>
+            </Grid.RowDefinitions>
+            <Button Grid.ColumnSpan="3" Name="OpenDoorButton" Content="OpenDoorButton" HorizontalAlignment="Left" Margin="457,64,0,0" Grid.Row="1" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5" Height="30"  Opacity="0" Click="DoorHandle_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90.063"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </Grid>
+
+        <Grid Name="CloseDoor" Grid.RowSpan="3" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="185*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="247"/>
+                <RowDefinition Height="212"/>
+                <RowDefinition Height="110"/>
+            </Grid.RowDefinitions>
+            <Button Grid.ColumnSpan="3" Name="CloseDoorButton" Content="CloseDoorButton" HorizontalAlignment="Left" Margin="127,86,0,0" Grid.Row="1" VerticalAlignment="Top" Width="210" RenderTransformOrigin="0.5,0.5" Height="40" Opacity="0" Click="CloseDoorButton_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-89.854"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </Grid>
+        
     </Grid>
 </Window>
+                
 
 
 
