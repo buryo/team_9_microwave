@@ -1,6 +1,6 @@
 # team_9_microwave
 
-## Een groepsopdracht vanuit Windesheim Flevoland
+### Een groepsopdracht vanuit Windesheim Flevoland
 
 ### Opdracht beschrijving
 Schrijf een grafische applicatie, die een representatie van een magnetron laat zien. De applicatie is
